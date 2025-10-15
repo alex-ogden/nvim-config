@@ -34,6 +34,7 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         "lua_ls",
+        "bacon_ls",
       },
       -- Auto-install servers when opening relevant files
       automatic_installation = true,

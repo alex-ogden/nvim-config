@@ -77,6 +77,13 @@ return {
     vim.lsp.config("*", {
       capabilities = capabilities,
     })
+    
+    default_settings = {
+      ["rust_analyzer"] = {
+        diagnostics = { enable = false },
+        checkOnSave = { enable = false },
+      }
+    }
 
     vim.lsp.config("lua_ls", {
       settings = {
