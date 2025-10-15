@@ -1,5 +1,6 @@
 return {
   "nvim-tree/nvim-tree.lua",
+  event = "VeryLazy",
   lazy = true,
   cmd = { 
     "NvimTreeToggle", 
@@ -25,8 +26,10 @@ return {
     -- Moving them to init ensures they're set at startup
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
+    print("nvim-tree init")
   end,
   config = function()
+    print("nvim-tree loading")
     local nvimtree = require("nvim-tree")
     
     nvimtree.setup({
@@ -62,7 +65,9 @@ return {
         custom = { ".DS_Store" },
       },
       git = {
+        enable = true,
         ignore = false,
+        timeout = 400,
       },
     })
   end,
