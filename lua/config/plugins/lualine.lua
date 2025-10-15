@@ -9,7 +9,7 @@ return {
     
     lualine.setup({
       options = {
-        colorscheme = 'farout',
+        colorscheme = "auto",
       },
       sections = {
         lualine_a = {
