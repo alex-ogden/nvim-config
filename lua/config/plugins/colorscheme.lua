@@ -15,6 +15,6 @@ return {
       terminal_colors = true,
       cache = true,
     })
-    vim.cmd.colorscheme("cyberdream") -- Change to 'cyberdream' to use installed colorscheme 
+    vim.cmd.colorscheme("darkblue") -- Changing to built-in colourscheme for now 
   end,
 }
