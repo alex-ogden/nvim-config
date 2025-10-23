@@ -10,8 +10,8 @@ return {
       transparent = true,
       saturation = 1,
       italic_comments = true,
-      hide_fillchars = true,
-      borderless_pickers = true,
+      hide_fillchars = false,
+      borderless_pickers = false,
       terminal_colors = true,
       cache = true,
     })
