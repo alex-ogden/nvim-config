@@ -6,12 +6,19 @@ return {
 
     conform.setup({
       formatters_by_ft = {
+        -- Target languages
+        cpp = { "clang-format" },
+        c = { "clang-format" },
+        rust = { "rustfmt" },
+        python = { "isort", "black" },
+        terraform = { "terraform_fmt" },
+        tf = { "terraform_fmt" },
+        hcl = { "terraform_fmt" },
         json = { "prettier" },
         yaml = { "prettier" },
-        markdown = { "prettier" },
+        -- Other useful languages
         lua = { "stylua" },
-        python = { "black" },
-        rust = { "rustfmt" },
+        markdown = { "prettier" },
       },
       -- something
       format_on_save = {

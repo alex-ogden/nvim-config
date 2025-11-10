@@ -5,6 +5,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim", opts = {} },
+    { "b0o/schemastore.nvim" }, -- JSON schemas
   },
   config = function()
     -- import cmp-nvim-lsp plugin
@@ -77,14 +78,8 @@ return {
     vim.lsp.config("*", {
       capabilities = capabilities,
     })
-    
-    default_settings = {
-      ["rust_analyzer"] = {
-        diagnostics = { enable = false },
-        checkOnSave = { enable = false },
-      }
-    }
 
+    -- Lua LSP
     vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
@@ -95,6 +90,71 @@ return {
           completion = {
             callSnippet = "Replace",
           },
+        },
+      },
+    })
+
+    -- Rust LSP
+    vim.lsp.config("rust_analyzer", {
+      settings = {
+        ["rust-analyzer"] = {
+          checkOnSave = {
+            command = "clippy", -- Use clippy for better linting
+          },
+          cargo = {
+            allFeatures = true,
+          },
+        },
+      },
+    })
+
+    -- C/C++ LSP
+    vim.lsp.config("clangd", {
+      cmd = {
+        "clangd",
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=iwyu",
+        "--completion-style=detailed",
+        "--function-arg-placeholders",
+      },
+    })
+
+    -- Python LSP
+    vim.lsp.config("basedpyright", {
+      settings = {
+        basedpyright = {
+          analysis = {
+            typeCheckingMode = "basic",
+            autoSearchPaths = true,
+            useLibraryCodeForTypes = true,
+            diagnosticMode = "workspace",
+          },
+        },
+      },
+    })
+
+    -- Terraform LSP
+    vim.lsp.config("terraformls", {})
+
+    -- YAML LSP
+    vim.lsp.config("yamlls", {
+      settings = {
+        yaml = {
+          schemas = {
+            ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+            ["https://json.schemastore.org/kustomization.json"] = "kustomization.yaml",
+          },
+        },
+      },
+    })
+
+    -- JSON LSP
+    vim.lsp.config("jsonls", {
+      settings = {
+        json = {
+          schemas = require("schemastore").json.schemas(),
+          validate = { enable = true },
         },
       },
     })

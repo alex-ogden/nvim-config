@@ -33,20 +33,30 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
-        "lua_ls",
-        "bacon_ls",
+        "lua_ls",          -- Lua
+        "rust_analyzer",   -- Rust (modern alternative to bacon_ls)
+        "clangd",          -- C++
+        "basedpyright",    -- Python (faster than pyright)
+        "terraformls",     -- Terraform
+        "yamlls",          -- YAML
+        "jsonls",          -- JSON
       },
       -- Auto-install servers when opening relevant files
       automatic_installation = true,
     })
-    
+
     mason_tool_installer.setup({
       ensure_installed = {
-        "prettier", -- prettier formatter
-        "stylua", -- lua formatter  
-        "isort", -- python formatter
-        "black", -- python formatter
-        "pylint",
+        -- Formatters
+        "prettier",        -- JSON, YAML
+        "stylua",          -- Lua
+        "black",           -- Python
+        "isort",           -- Python imports
+        "clang-format",    -- C++
+        "rustfmt",         -- Rust
+        -- Linters
+        "ruff",            -- Python (fast, modern linter/formatter)
+        "tflint",          -- Terraform
       },
       -- Auto-install tools
       auto_update = false,

@@ -5,7 +5,9 @@ return {
     local lint = require("lint")
 
     lint.linters_by_ft = {
-      python = { "pylint" },
+      python = { "ruff" },
+      terraform = { "tflint" },
+      tf = { "tflint" },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

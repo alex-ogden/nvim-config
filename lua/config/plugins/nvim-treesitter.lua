@@ -15,16 +15,22 @@ return {
       indent = { enable = true },
       -- ensure these language parsers are installed
       ensure_installed = {
-        "json",
-        "yaml",
-        "markdown",
-        "markdown_inline",
-        "bash",
-        "lua",
-        "dockerfile",
-        "gitignore",
+        -- Target languages
+        "cpp",
         "c",
         "rust",
+        "python",
+        "terraform",
+        "hcl",
+        "json",
+        "yaml",
+        -- Useful supporting languages
+        "lua",
+        "bash",
+        "markdown",
+        "markdown_inline",
+        "dockerfile",
+        "gitignore",
       },
       incremental_selection = {
         enable = true,
