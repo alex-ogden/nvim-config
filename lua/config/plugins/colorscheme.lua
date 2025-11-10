@@ -1,20 +1,10 @@
 return {
-  "scottmckendry/cyberdream.nvim",
+  "caglartoklu/borlandp.vim",
   lazy = false,
   priority = 1000,
   config = function()
-    local cyberdream = require("cyberdream")
-
-    cyberdream.setup({
-      variant = "default",
-      transparent = true,
-      saturation = 1,
-      italic_comments = true,
-      hide_fillchars = false,
-      borderless_pickers = false,
-      terminal_colors = true,
-      cache = true,
-    })
-    vim.cmd.colorscheme("cyberdream") -- Changing to built-in colourscheme for now 
+    --vim.cmd.colorscheme("borlandp") -- Changing to built-in colourscheme for now 
+    vim.g.borlandp_bg = "dark_blue"
+    vim.cmd("colo borlandp")
   end,
 }
