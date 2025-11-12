@@ -4,8 +4,9 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.g.borlandp_bg = "dark_blue"
-			vim.cmd("colo borlandp")
+			-- vim.g.borlandp_bg = "dark_blue"
+			-- vim.cmd("colo borlandp")
+			vim.cmd("colo darkblue") -- Using default darkblue theme for now
 		end,
 	},
 	-- {
