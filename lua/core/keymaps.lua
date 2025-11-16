@@ -1,5 +1,9 @@
 local keymap = vim.keymap
 
+-- Christmas Keymaps
+keymap.set("n", "<leader>l", "", { desc = "Let it snow!" })
+keymap.set("n", "<leader>ls", "<cmd>LetItSnow<CR>", { desc = "Toggle the snow" })
+
 -- General keymaps
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode" })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
