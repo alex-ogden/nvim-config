@@ -1,29 +1,19 @@
 return {
 	-- {
-	-- 	"caglartoklu/borlandp.vim",
+	-- 	"scottmckendry/cyberdream.nvim",
 	-- 	lazy = false,
 	-- 	priority = 1000,
 	-- 	config = function()
-	-- 		-- vim.g.borlandp_bg = "dark_blue"
-	-- 		-- vim.cmd("colo borlandp")
-	-- 		vim.cmd("colo darkblue") -- Using default darkblue theme for now
+	-- 		require("cyberdream").setup({
+	-- 			transparent = false,
+	-- 			italic_comments = true,
+	-- 			hide_fillchars = false,
+	-- 			borderless_telescope = true,
+	-- 			terminal_colors = true,
+	-- 		})
+	-- 		vim.cmd("colo cyberdream")
 	-- 	end,
 	-- },
-	{
-		"scottmckendry/cyberdream.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("cyberdream").setup({
-				transparent = false,
-				italic_comments = true,
-				hide_fillchars = false,
-				borderless_telescope = false,
-				terminal_colors = true,
-			})
-			vim.cmd("colo darkblue")
-		end,
-	},
 
 	-- {
 	--   "eddyekofo94/gruvbox-flat.nvim",
@@ -34,14 +24,14 @@ return {
 	--   end,
 	-- },
 
-	-- {
-	--   "samharju/synthweave.nvim",
-	--   lazy = false,
-	--   priority = 1000,
-	--   config = function()
-	--     vim.cmd("colorscheme synthweave")
-	--   end,
-	-- },
+	{
+		"samharju/synthweave.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd("colorscheme synthweave")
+		end,
+	},
 
 	-- {
 	-- 	"ray-x/starry.nvim",
