@@ -13,6 +13,7 @@ return {
 					"stylua", -- Lua
 					"shfmt", -- Bash/Shell
 					"prettier", -- JSON/YAML/Markdown
+					"zls", -- Zig
 				},
 				auto_update = true,
 				run_on_start = true,
@@ -34,7 +35,7 @@ return {
 					cmake = { "cmakelang" },
 					rust = { "rustfmt" },
 					python = { "isort", "black" },
-					zig = { "zigfmt" },
+					zig = { "zig fmt" },
 					lua = { "stylua" },
 					bash = { "shfmt" },
 					sh = { "shfmt" },
