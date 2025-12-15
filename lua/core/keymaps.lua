@@ -42,3 +42,8 @@ keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" })
 -- Quit
 keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 keymap.set("n", "<leader>Q", "<cmd>qa!<CR>", { desc = "Quit all without saving" })
+
+-- Preview
+keymap.set("n", "<leader>p", "", { desc = "Preview" })
+keymap.set("n", "<leader>pm", "<cmd>MarkdownPreview<CR>", { desc = "Preview markdown" })
+keymap.set("n", "<leader>pc", "<cmd>MarkdownPreviewStop<CR>", { desc = "Close preview" })

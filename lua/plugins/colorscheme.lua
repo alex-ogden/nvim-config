@@ -11,7 +11,7 @@ return {
 				borderless_telescope = true,
 				terminal_colors = true,
 			})
-			vim.cmd("colo darkblue")
+			vim.cmd("colo murphy")
 		end,
 	},
 	-- {
