@@ -35,8 +35,18 @@ opt.sidescrolloff = 8
 -- Backspace
 opt.backspace = "indent,eol,start"
 
--- Clipboard
+-- --- CLIPBOARD (WSL FIX) ---
 opt.clipboard:append("unnamedplus")
+
+-- If you are on WSL, this tells Neovim to use the Windows clipboard specifically
+if vim.fn.has("wsl") == 1 then
+    vim.g.clipboard = {
+        name = "WslClipboard",
+        copy = { ["+"] = "clip.exe", ["*"] = "clip.exe" },
+        paste = { ["+"] = "powershell.exe -c [Console]::Out.Write($(Get-Clipboard))", ["*"] = "powershell.exe -c [Console]::Out.Write($(Get-Clipboard))" },
+        cache_enabled = 0,
+    }
+end
 
 -- Split windows
 opt.splitright = true
@@ -55,11 +65,11 @@ opt.timeoutlen = 300
 -- Completion
 opt.completeopt = "menu,menuone,noselect"
 
--- Performance
-opt.lazyredraw = false
+-- --- PERFORMANCE & STABILITY ---
+-- DELETED: opt.lazyredraw = false (This is deprecated/buggy in modern Neovim with Lua)
+opt.shada = "'100,<50,s10,:100" -- Remember more history/registers
 
--- Mouse
+-- Mouse & UI
 opt.mouse = "a"
-
--- Statusline
 opt.showmode = false
+opt.laststatus = 3 -- Global statusline (modern look)
