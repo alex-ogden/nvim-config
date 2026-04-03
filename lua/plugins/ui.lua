@@ -4,7 +4,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
-			style = "storm", -- options: lightning, storm, moon, night
+			style = "night", -- options: lightning, storm, moon, night
 			transparent = true, -- optional: makes the background match your terminal
 			styles = {
 				-- This is the "Joined Up" magic for Victor Mono
